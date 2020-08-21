@@ -1,0 +1,31 @@
+1.Basic Laravel Auth: ability to log in as an administrator
+composer require laravel/ui
+php artisan ui bootstrap --auth
+run command and make authentication for login
+
+2.Use database seeds to create the first user with email admin@admin.com and password “password”
+php artisan make:seeder UserSeeder
+run command and create new user seeder file and write email password for login.
+
+3.CRUD functionality (Create / Read / Update / Delete) for two menu items: Companies and Employees.
+php artisan make:model company -mcr
+php artisan make:model employee -mcr
+this command create model migration and resource controller
+
+4.Companies DB table consists of these fields: Name (required), email, logo (minimum 100×100), website
+create migration schema for company table
+
+5.Employees DB table consists of these fields: First name (required), last name (required), Company (foreign key to Companies), email, phone
+create migration schema for employee table and run command php artisan migrate for make both table in db.
+
+6.Store companies logos in storage/app/public folder and make them accessible from public
+store logo in storage folder and run command php artisan storage:link
+
+7.Use Laravel’s validation function, using Request classes
+create request validation file run command php artisan make:request CompanyRequest and php artisan make:request EmployeeRequest and make rules and messages.
+
+8.Use Laravel’s pagination for showing Companies/Employees list, 10 entries per page
+showing 10 records in one page using laravel pagination
+
+9.Use Laravel make: auth as default Bootstrap-based design theme, but remove the ability to register
+run command for make default bootstrap based design theme make auth php artisan ui bootstrap --auth and user cant register only can login
